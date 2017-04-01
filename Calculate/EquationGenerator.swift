@@ -40,7 +40,15 @@ class EquationGenerator {
                 }
             }
         }
-        let eq: NSExpression = NSExpression.init(format: equation)
-        result = String.init(format: "%.2f", eq.expressionValue(with: nil, context: nil) as! Double)
+        
+    }
+    
+    func evaluateEquation() -> Bool{
+        if(equation != ""){
+            let eq: NSExpression = NSExpression.init(format: equation)
+            result = String.init(format: "%.2f", eq.expressionValue(with: nil, context: nil) as! Double)
+            return true
+        }
+        return false
     }
 }
