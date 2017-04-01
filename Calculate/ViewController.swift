@@ -21,19 +21,10 @@ class ViewController: UIViewController {
         regex.parse()
         eqGen = EquationGenerator(regex: regex)
         eqGen.generate()
-        
-//        print(text)
-//        print("Default operand: "+defaultOp)
-        
-        textView.text = eqGen.equation + " = " +  eqGen.result
-        
-        
-//        print("Total: \(total)")
+        if(eqGen.evaluateEquation()){
+            textView.text = eqGen.equation + " = " +  eqGen.result
+        }
     }
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
